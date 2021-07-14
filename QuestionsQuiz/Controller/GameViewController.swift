@@ -11,9 +11,13 @@ enum ForAlertView {
     case rightAnswer
     case wrongAnswer
     case gameOver
+    
+    case friendCall
+    case helpOfSpectators
+    case hint50
 }
 
-protocol GameVCDelegate: class {
+protocol GameVCDelegate: AnyObject {
     func didTapAnswer(question: Question, answerInt: Int, helpersStatus: [String:Int] )
     
 }
@@ -33,6 +37,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var helperFromSpactatorsBtn: UIButton!
     @IBOutlet weak var helperCallToFriendBtn: UIButton!
     
+    @IBOutlet weak var moneyEarnedLbl: UILabel!
+    
+    
     weak var gameDelegate: GameVCDelegate?
     
     var numberOfQuestion: Int = 0
@@ -44,6 +51,7 @@ class GameViewController: UIViewController {
         "helpFromSpectators": 1,
         "50Hint": 1
     ]
+    var moneyEarned: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +73,12 @@ class GameViewController: UIViewController {
         self.answeredWellQuestionsLbl.text = "Отвечено верно: 0 %"
         
         self.questionLbl.text = quest.question
+        //настройка - проверка кнопок
+        self.answerOneBtn.isHidden = false
+        self.answerTwoBtn.isHidden = false
+        self.answerThreeBtn.isHidden = false
+        self.answerFourBtn.isHidden = false
+        
         self.answerOneBtn.setTitle(quest.allAnswers[0], for: .normal)
         self.answerTwoBtn.setTitle(quest.allAnswers[1], for: .normal)
         self.answerThreeBtn.setTitle(quest.allAnswers[2], for: .normal)
@@ -75,24 +89,18 @@ class GameViewController: UIViewController {
     
     func checkAndSetHelpers(){
         if helpers["50Hint"] == 1 {
-            helper50HintBtn.isEnabled = true
             helper50HintBtn.isHidden = false
         } else {
-            helper50HintBtn.isEnabled = false
             helper50HintBtn.isHidden = true
         }
         if helpers["helpFromSpectators"] == 1 {
-            helperFromSpactatorsBtn.isEnabled = true
             helperFromSpactatorsBtn.isHidden = false
         } else {
-            helperFromSpactatorsBtn.isEnabled = false
             helperFromSpactatorsBtn.isHidden = true
         }
         if helpers["callToFriend"] == 1 {
-            helperFromSpactatorsBtn.isEnabled = true
             helperFromSpactatorsBtn.isHidden = false
         } else {
-            helperFromSpactatorsBtn.isEnabled = false
             helperFromSpactatorsBtn.isHidden = true
         }
     }
@@ -112,9 +120,12 @@ class GameViewController: UIViewController {
             setQuestion(numberOfQuestion: numberOfQuestion)
             
         } else if numberOfQuestion == 9 {
-           
-            createAlertView(kindOfView: .gameOver)
-
+            print("=========")
+            print("Game over")
+            //createAlertView(kindOfView: .gameOver)
+            self.dismiss(animated: true) {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
         
     }
@@ -122,14 +133,16 @@ class GameViewController: UIViewController {
     func checkAnswerCorrect(question: Question, numberOfAnswer: Int) {
         if numberOfAnswer == question.rightAnswer {
             createAlertView(kindOfView: .rightAnswer)
+            self.moneyEarned += 100
         } else {
             createAlertView(kindOfView: .wrongAnswer)
+            self.moneyEarned -= 100
         }
     }
     
     func createAlertView(kindOfView: ForAlertView) {
         var messageLabel = ""
-        
+        var titleLbl = "Внимание!"
         switch kindOfView {
         case .rightAnswer:
             messageLabel = "Правильный ответ!"
@@ -137,19 +150,45 @@ class GameViewController: UIViewController {
             messageLabel = "Ответ не верный!"
         case .gameOver:
             messageLabel = "Конец Игры!"
-            
+        case .friendCall:
+            let answer = getRightAnswer()
+            titleLbl = "Ало, ало!"
+            messageLabel = "Я думаю правильный ответ - \(answer). "
+        case .helpOfSpectators:
+            let answer1 = getRightAnswer()
+            let answer2 = getRandomAnswerNotRight()
+            titleLbl = "Зал проголосовал!"
+            messageLabel = "Зал считает 90% - \(answer1), 10% - \(answer2)"
+        case .hint50:
+            titleLbl = "Помощь компьютера!"
+            messageLabel = "Убрано два неправильных варианта!"
         }
-        let alertView = UIAlertController.init(title: "Внимание!", message: messageLabel, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok", style: .default, handler: { _ in
-            if self.numberOfQuestion == 9 {
-                if let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainMenuViewController") as? MainMenuViewController {
-                    view.modalPresentationStyle = .fullScreen
-                    self.present(view, animated: true, completion: nil)
+        let alertView = UIAlertController.init(title: titleLbl, message: messageLabel, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: { action in
+            if kindOfView == .gameOver{
+                self.dismiss(animated: true) {
+                    self.dismiss(animated: true, completion: nil)
                 }
             }
         })
         alertView.addAction(action)
         present(alertView, animated: true, completion: nil)
+    }
+    
+    func getRightAnswer() -> String {
+        guard let answerNumber = question?.rightAnswer,
+              let answer = question?.allAnswers[answerNumber-1] else {return "нет ответа" }
+        return answer
+    }
+    
+    func getRandomAnswerNotRight() -> String {
+        guard let answerNumber = question?.rightAnswer else { return "нет ответа" }
+        var value = 0
+        repeat{
+            value = Int.random(in: 0...3)
+        } while (value == (answerNumber-1))
+        guard let answer = question?.allAnswers[value] else {return "нет ответа"}
+        return answer
     }
 
     @IBAction func answerOneBtnWasPrssd(_ sender: Any) {
@@ -168,6 +207,53 @@ class GameViewController: UIViewController {
         answerTapped(numberOfAnswer: 4)
     }
     
+    @IBAction func helper50HintWasPrssd(_ sender: Any) {
+        createAlertView(kindOfView: .hint50)
+        self.helpers["50Hint"] = 0
+        guard let answerNumber = question?.rightAnswer else { return }
+        for _ in 0..<2 {
+            var rndNumberOfBtnToDismiss = 0
+            repeat{
+                rndNumberOfBtnToDismiss = Int.random(in: 0...3)
+            } while (rndNumberOfBtnToDismiss == answerNumber-1)
+            
+            switch rndNumberOfBtnToDismiss {
+            case 0:
+                self.answerOneBtn.isHidden = true
+            case 1:
+                self.answerTwoBtn.isHidden = true
+            case 2:
+                self.answerThreeBtn.isHidden = true
+            case 3:
+                self.answerFourBtn.isHidden = true
+            default:
+                print("helper50HintWasPrssd - case -default")
+            }
+        }
+        self.helper50HintBtn.isHidden = true
+    }
+    
+    @IBAction func helperFromSpectatorsWasPrssd(_ sender: Any) {
+        createAlertView(kindOfView: .helpOfSpectators)
+        self.helpers["helpFromSpectators"] = 0
+        self.helperFromSpactatorsBtn.isHidden = true
+    }
+    @IBAction func helperCallToFriendWasPrssd(_ sender: Any) {
+        createAlertView(kindOfView: .friendCall)
+        self.helpers["callToFriend"] = 0
+        self.helperCallToFriendBtn.isHidden = true
+    }
+    
+    
+    @IBAction func takeMoneyAndQuitBtnWasPrssd(_ sender: Any) {
+        createAlertView(kindOfView: .gameOver)
+        //to do
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        // todo save
+    }
     
 }
 

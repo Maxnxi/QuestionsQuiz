@@ -28,7 +28,7 @@ class MainMenuViewController: UIViewController {
         
         //переход
         if let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameViewController") as? GameViewController {
-            view.modalPresentationStyle = .fullScreen
+            view.modalPresentationStyle = .automatic
             self.present(view, animated: true, completion: nil)
         }
         
