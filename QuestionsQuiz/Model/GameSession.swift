@@ -21,3 +21,12 @@ class GameSession {
     ]
     
 }
+
+extension GameSession: GameVCDelegate {
+    func didTapAnswer(question: Question, answerInt: Int, helpersStatus: [String : Int]) {
+        //TO do
+    }
+    
+    
+    
+}

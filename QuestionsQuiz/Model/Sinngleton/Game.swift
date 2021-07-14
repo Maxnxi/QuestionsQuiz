@@ -11,11 +11,9 @@ final class Game {
     
     static let shared = Game()
     
-    weak var gameSession: GameSession?
+    var gameSession: GameSession?
     
-    private init() {
-        
-    }
+    private init() { }
     
     
 }

@@ -11,16 +11,16 @@
         <!--Main Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="QuestionsQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainMenuViewController" id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="QuestionsQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="i05-Ox-h99">
-                                <rect key="frame" x="126" y="352" width="138" height="140"/>
+                                <rect key="frame" x="73.333333333333329" y="277" width="243.33333333333337" height="290"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaZ-gZ-BDB">
-                                        <rect key="frame" x="18" y="0.0" width="102" height="53"/>
+                                        <rect key="frame" x="70.666666666666671" y="0.0" width="102.00000000000001" height="53"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
                                         <state key="normal" title="Играть">
                                             <color key="titleColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -29,14 +29,39 @@
                                             <action selector="playBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ehF-Ne-2vD"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03B-md-Fqd">
-                                        <rect key="frame" x="0.0" y="93" width="138" height="47"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03B-md-Fqd">
+                                        <rect key="frame" x="40.333333333333343" y="93" width="162.66666666666666" height="35"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
+                                        <color key="tintColor" red="0.088012926280000001" green="0.92514079810000005" blue="0.93334370850000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title=" Настройки" image="gear" catalog="system">
+                                            <color key="titleColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="resultsBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="883-8Y-TBP"/>
+                                            <action selector="settingsBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BcZ-Rt-Vj4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9j-X1-08j">
+                                        <rect key="frame" x="0.0" y="168" width="243.33333333333334" height="35"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
+                                        <color key="tintColor" red="0.088012926280000001" green="0.92514079810000005" blue="0.93334370850000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title=" Добавить вопрос" image="plus.bubble.fill" catalog="system">
+                                            <color key="titleColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addQuestionBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iI0-Ju-8Kx"/>
+                                            <action selector="resultsBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CXm-9Y-TAG"/>
+                                            <action selector="settingsBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TDL-ig-FNM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2F-67-S5b">
+                                        <rect key="frame" x="52.666666666666671" y="243" width="138" height="47"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
                                         <state key="normal" title="Результаты">
                                             <color key="titleColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="resultsBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="883-8Y-TBP"/>
+                                            <action selector="resultsBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y4P-qy-9YU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -50,8 +75,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addQuestionBtn" destination="b9j-X1-08j" id="sgK-Qz-oCR"/>
                         <outlet property="playBtn" destination="DaZ-gZ-BDB" id="YlP-Kj-ebk"/>
                         <outlet property="resultsBtn" destination="03B-md-Fqd" id="EMk-NV-CUp"/>
+                        <outlet property="settingsBtn" destination="03B-md-Fqd" id="eQD-rE-dSW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -61,17 +88,49 @@
         <!--Game View Controller-->
         <scene sceneID="DZX-ei-0Mi">
             <objects>
-                <viewController id="Kch-44-Uel" customClass="GameViewController" customModule="QuestionsQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameViewController" id="Kch-44-Uel" customClass="GameViewController" customModule="QuestionsQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gVo-mj-bmo">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tjI-l4-7Qw">
+                                <rect key="frame" x="16" y="58" width="310.66666666666669" height="15"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос: 1 из 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEb-xq-DBX">
+                                        <rect key="frame" x="0.0" y="0.0" width="122.33333333333333" height="15"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                        <color key="textColor" red="0.99019607840000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFa-FF-y14">
+                                        <rect key="frame" x="132.33333333333334" y="0.0" width="1" height="15"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="Vkl-hc-Szf"/>
+                                            <constraint firstAttribute="height" constant="15" id="cq3-Fr-4Pa"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отвечено верно: 0 %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hes-ws-Aw3">
+                                        <rect key="frame" x="143.33333333333331" y="0.0" width="167.33333333333331" height="15"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                        <color key="textColor" red="0.99019607840000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Labelм мLabelLabel Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiD-BZ-hrL">
-                                <rect key="frame" x="16" y="64" width="358" height="60.333333333333343"/>
+                                <rect key="frame" x="16" y="89" width="358" height="35.333333333333343"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbs-r2-TGI">
+                                <rect key="frame" x="16" y="140.33333333333334" width="358" height="1"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="qnF-Kj-kpk"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fZU-tV-U0e">
                                 <rect key="frame" x="28" y="187.33333333333337" width="346" height="188"/>
                                 <subviews>
@@ -81,6 +140,9 @@
                                         <state key="normal" title="1. Ответ">
                                             <color key="titleColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="answerOneBtnWasPrssd:" destination="Kch-44-Uel" eventType="touchUpInside" id="FQx-u5-cwl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jf4-3P-OZ4">
                                         <rect key="frame" x="0.0" y="52" width="57" height="32"/>
@@ -88,6 +150,9 @@
                                         <state key="normal" title="2. Ответ">
                                             <color key="titleColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="answerTwoBtnWasPrssd:" destination="Kch-44-Uel" eventType="touchUpInside" id="4Wo-cM-rVG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IsY-Nm-kxu">
                                         <rect key="frame" x="0.0" y="103.99999999999997" width="57" height="32"/>
@@ -95,6 +160,9 @@
                                         <state key="normal" title="3. Ответ">
                                             <color key="titleColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="answerThreeBtnWasPrssd:" destination="Kch-44-Uel" eventType="touchUpInside" id="Cax-vF-fpl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKX-dn-Tkv">
                                         <rect key="frame" x="0.0" y="155.99999999999997" width="57" height="32"/>
@@ -102,6 +170,9 @@
                                         <state key="normal" title="4. Ответ">
                                             <color key="titleColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="answerFourBtnWasPrssd:" destination="Kch-44-Uel" eventType="touchUpInside" id="dyT-P2-VtB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -116,13 +187,6 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="cgc-ut-fGL"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbs-r2-TGI">
-                                <rect key="frame" x="16" y="140.33333333333334" width="358" height="1"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="qnF-Kj-kpk"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подсказки:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6w-2S-wpg">
@@ -171,22 +235,27 @@
                             <constraint firstItem="jEr-4a-CdO" firstAttribute="trailing" secondItem="jbs-r2-TGI" secondAttribute="trailing" constant="16" id="07p-qd-A43"/>
                             <constraint firstItem="jEr-4a-CdO" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ysd-3H-EAF" secondAttribute="trailing" symbolic="YES" id="166-sh-7vn"/>
                             <constraint firstItem="iVi-gH-eDN" firstAttribute="leading" secondItem="jEr-4a-CdO" secondAttribute="leading" constant="16" id="2pn-86-7jd"/>
-                            <constraint firstItem="OiD-BZ-hrL" firstAttribute="top" secondItem="jEr-4a-CdO" secondAttribute="top" constant="20" id="4dB-Jc-FSf"/>
                             <constraint firstItem="ysd-3H-EAF" firstAttribute="leading" secondItem="jEr-4a-CdO" secondAttribute="leading" constant="16" id="5RQ-K9-OYj"/>
                             <constraint firstItem="jEr-4a-CdO" firstAttribute="trailing" secondItem="fZU-tV-U0e" secondAttribute="trailing" constant="16" id="6Sy-hs-tUj"/>
                             <constraint firstItem="jbs-r2-TGI" firstAttribute="leading" secondItem="jEr-4a-CdO" secondAttribute="leading" constant="16" id="BHP-A9-4dt"/>
                             <constraint firstItem="jEr-4a-CdO" firstAttribute="trailing" secondItem="dGV-4P-3gu" secondAttribute="trailing" constant="16" id="DG4-j7-MXA"/>
                             <constraint firstItem="jbs-r2-TGI" firstAttribute="top" secondItem="OiD-BZ-hrL" secondAttribute="bottom" constant="16" id="IvH-77-PsY"/>
+                            <constraint firstItem="dGV-4P-3gu" firstAttribute="centerX" secondItem="r34-P0-hjS" secondAttribute="centerX" id="LUQ-H1-t6b"/>
                             <constraint firstItem="dGV-4P-3gu" firstAttribute="top" secondItem="x6w-2S-wpg" secondAttribute="bottom" constant="8" id="MHt-0p-3Rm"/>
                             <constraint firstItem="x6w-2S-wpg" firstAttribute="leading" secondItem="jEr-4a-CdO" secondAttribute="leading" constant="16" id="PT2-Yw-QTa"/>
+                            <constraint firstItem="dGV-4P-3gu" firstAttribute="centerY" secondItem="r34-P0-hjS" secondAttribute="centerY" id="Ri3-XH-CB8"/>
                             <constraint firstItem="iVi-gH-eDN" firstAttribute="top" secondItem="fZU-tV-U0e" secondAttribute="bottom" constant="16" id="WdG-G1-sSb"/>
                             <constraint firstItem="OiD-BZ-hrL" firstAttribute="leading" secondItem="jEr-4a-CdO" secondAttribute="leading" constant="16" id="YAE-Xl-Vm7"/>
                             <constraint firstItem="jEr-4a-CdO" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="x6w-2S-wpg" secondAttribute="trailing" symbolic="YES" id="Z97-An-QKR"/>
                             <constraint firstItem="jEr-4a-CdO" firstAttribute="trailing" secondItem="OiD-BZ-hrL" secondAttribute="trailing" constant="16" id="ZeM-4q-yde"/>
+                            <constraint firstItem="tjI-l4-7Qw" firstAttribute="top" secondItem="jEr-4a-CdO" secondAttribute="top" constant="14" id="c6k-gt-TMS"/>
                             <constraint firstItem="fZU-tV-U0e" firstAttribute="top" secondItem="ysd-3H-EAF" secondAttribute="bottom" constant="16" id="cIh-en-p1v"/>
                             <constraint firstItem="x6w-2S-wpg" firstAttribute="top" secondItem="iVi-gH-eDN" secondAttribute="bottom" constant="16" id="dgO-IT-oBA"/>
+                            <constraint firstItem="tjI-l4-7Qw" firstAttribute="leading" secondItem="jEr-4a-CdO" secondAttribute="leading" constant="16" id="fFW-yA-esE"/>
+                            <constraint firstItem="jbs-r2-TGI" firstAttribute="top" secondItem="tjI-l4-7Qw" secondAttribute="bottom" constant="67.333333333333343" id="gnP-4V-TJQ"/>
                             <constraint firstItem="dGV-4P-3gu" firstAttribute="leading" secondItem="jEr-4a-CdO" secondAttribute="leading" constant="16" id="jxS-3A-in0"/>
                             <constraint firstItem="r34-P0-hjS" firstAttribute="top" secondItem="x6w-2S-wpg" secondAttribute="bottom" constant="8" id="lfy-hF-EER"/>
+                            <constraint firstItem="OiD-BZ-hrL" firstAttribute="top" secondItem="tjI-l4-7Qw" secondAttribute="bottom" constant="16" id="o14-5z-fGE"/>
                             <constraint firstItem="jEr-4a-CdO" firstAttribute="trailing" secondItem="iVi-gH-eDN" secondAttribute="trailing" constant="16" id="qTl-3v-nFZ"/>
                             <constraint firstItem="fZU-tV-U0e" firstAttribute="leading" secondItem="jEr-4a-CdO" secondAttribute="leading" constant="28" id="qpj-ju-hnx"/>
                             <constraint firstItem="jEr-4a-CdO" firstAttribute="trailing" secondItem="r34-P0-hjS" secondAttribute="trailing" constant="32" id="sWp-FX-cuZ"/>
@@ -194,6 +263,18 @@
                             <constraint firstItem="r34-P0-hjS" firstAttribute="leading" secondItem="jEr-4a-CdO" secondAttribute="leading" constant="32" id="xIr-Vz-BN8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="answerFourBtn" destination="lKX-dn-Tkv" id="Wq4-7A-l6a"/>
+                        <outlet property="answerOneBtn" destination="5T0-WT-HB0" id="6x8-kc-cLH"/>
+                        <outlet property="answerThreeBtn" destination="IsY-Nm-kxu" id="ao3-mm-xVD"/>
+                        <outlet property="answerTwoBtn" destination="Jf4-3P-OZ4" id="oHe-nh-Kpp"/>
+                        <outlet property="answeredWellQuestionsLbl" destination="Hes-ws-Aw3" id="47m-q4-vIl"/>
+                        <outlet property="helper50HintBtn" destination="KMX-dX-MDJ" id="HmV-BL-hQ5"/>
+                        <outlet property="helperCallToFriendBtn" destination="yjQ-V2-WRU" id="FLO-MR-xSP"/>
+                        <outlet property="helperFromSpactatorsBtn" destination="o9g-Ot-Zmw" id="RVx-Fo-jc8"/>
+                        <outlet property="numberOfQuestionsLbl" destination="NEb-xq-DBX" id="Bdh-Dv-YoQ"/>
+                        <outlet property="questionLbl" destination="OiD-BZ-hrL" id="U4q-2e-vsg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lle-GD-tDc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -201,6 +282,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="plus.bubble.fill" catalog="system" width="128" height="110"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
