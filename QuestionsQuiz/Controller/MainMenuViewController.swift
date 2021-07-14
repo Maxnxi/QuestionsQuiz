@@ -8,7 +8,7 @@
 import UIKit
 
 class MainMenuViewController: UIViewController {
-
+    
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var settingsBtn: UIButton!
     @IBOutlet weak var addQuestionBtn: UIButton!
@@ -21,13 +21,16 @@ class MainMenuViewController: UIViewController {
 
 
     @IBAction func playBtnWasPrssd(_ sender: Any) {
+        
         //ДЗ №1 п.4
         //создавайте новый GameSession и передайте его синглтону Game
         let gmeSession = GameSession()
-        Game.shared.gameSession = gmeSession
+        GameSingleton.shared.gameSession = gmeSession
+
         
-        //переход
         if let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameViewController") as? GameViewController {
+            
+            view.gameViewControllerDelegate = gmeSession
             view.modalPresentationStyle = .automatic
             self.present(view, animated: true, completion: nil)
         }

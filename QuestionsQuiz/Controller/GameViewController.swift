@@ -11,15 +11,13 @@ enum ForAlertView {
     case rightAnswer
     case wrongAnswer
     case gameOver
-    
     case friendCall
     case helpOfSpectators
     case hint50
 }
 
-protocol GameVCDelegate: AnyObject {
-    func didTapAnswer(question: Question, answerInt: Int, helpersStatus: [String:Int] )
-    
+protocol GameViewControllerDelegate: AnyObject {
+    func sendResult(questionsAnswered: Int, answeredWellQuestions: Int, moneyEarned: Int, helpers: [String:Int], helpersUsed: Int)
 }
 
 class GameViewController: UIViewController {
@@ -39,26 +37,32 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var moneyEarnedLbl: UILabel!
     
+    //ДЗ №1 п.4 delegate
+    weak var gameViewControllerDelegate: GameViewControllerDelegate?
     
-    weak var gameDelegate: GameVCDelegate?
-    
-    var numberOfQuestion: Int = 0
     var questionsArray:[Question]?
     var question: Question?
     
+    var totalQuestions: Int = 10
+    var numberOfQuestion: Int = 0
+    var answeredWellQuestions: Int = 0
+    var questionsAnswered: Int = 0
+    
+    var moneyEarned: Int = 0
     var helpers: [String: Int] = [
         "callToFriend": 1,
         "helpFromSpectators": 1,
         "50Hint": 1
     ]
-    var moneyEarned: Int = 0
+    var helpersUsed: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         self.questionsArray = QUESTIONS_ARRAY
         print("questions loaded")
         setQuestion(numberOfQuestion: numberOfQuestion)
-
     }
     
     func setQuestion(numberOfQuestion: Int) {
@@ -73,6 +77,7 @@ class GameViewController: UIViewController {
         self.answeredWellQuestionsLbl.text = "Отвечено верно: 0 %"
         
         self.questionLbl.text = quest.question
+        self.moneyEarnedLbl.text = "Заработано денег: \(moneyEarned) Bitcoins"
         //настройка - проверка кнопок
         self.answerOneBtn.isHidden = false
         self.answerTwoBtn.isHidden = false
@@ -107,11 +112,12 @@ class GameViewController: UIViewController {
     
     
     func answerTapped(numberOfAnswer: Int) {
+        questionsAnswered += 1
         guard let questi = question else {
             print("error #10")
             return
         }
-        gameDelegate?.didTapAnswer(question: questi, answerInt: numberOfAnswer, helpersStatus: helpers)
+        
         checkAnswerCorrect(question: questi, numberOfAnswer: numberOfAnswer)
         if numberOfQuestion < 9 {
            
@@ -128,12 +134,15 @@ class GameViewController: UIViewController {
             }
         }
         
+        gameViewControllerDelegate?.sendResult(questionsAnswered: questionsAnswered, answeredWellQuestions: answeredWellQuestions, moneyEarned: moneyEarned, helpers: helpers, helpersUsed: helpersUsed)
+        
     }
     
     func checkAnswerCorrect(question: Question, numberOfAnswer: Int) {
         if numberOfAnswer == question.rightAnswer {
             createAlertView(kindOfView: .rightAnswer)
             self.moneyEarned += 100
+            self.answeredWellQuestions += 1
         } else {
             createAlertView(kindOfView: .wrongAnswer)
             self.moneyEarned -= 100
@@ -210,6 +219,7 @@ class GameViewController: UIViewController {
     @IBAction func helper50HintWasPrssd(_ sender: Any) {
         createAlertView(kindOfView: .hint50)
         self.helpers["50Hint"] = 0
+        self.helpersUsed += 1
         guard let answerNumber = question?.rightAnswer else { return }
         for _ in 0..<2 {
             var rndNumberOfBtnToDismiss = 0
@@ -236,11 +246,13 @@ class GameViewController: UIViewController {
     @IBAction func helperFromSpectatorsWasPrssd(_ sender: Any) {
         createAlertView(kindOfView: .helpOfSpectators)
         self.helpers["helpFromSpectators"] = 0
+        self.helpersUsed += 1
         self.helperFromSpactatorsBtn.isHidden = true
     }
     @IBAction func helperCallToFriendWasPrssd(_ sender: Any) {
         createAlertView(kindOfView: .friendCall)
         self.helpers["callToFriend"] = 0
+        self.helpersUsed += 1
         self.helperCallToFriendBtn.isHidden = true
     }
     
@@ -251,8 +263,11 @@ class GameViewController: UIViewController {
         
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        // todo save
+    override func viewWillDisappear(_ animated: Bool) {
+      let result = Result(date: Date(), answers: questionsAnswered, answeredRight: answeredWellQuestions, helpersUsed: helpersUsed, moneyEarned: moneyEarned)
+        GameSingleton.shared.addResultToArray(result: result)
+        GameSingleton.shared.mathsHowManyPercentsOfRightAnswers()
+        GameSingleton.shared.endGameCleanGameSession()
     }
     
 }

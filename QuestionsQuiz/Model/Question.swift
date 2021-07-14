@@ -29,7 +29,7 @@ let question3 = Question(question: "Как зовут кота из мульти
 let question4 = Question(question: "Какая форма pop-it встречается реже других?", allAnswers: ["Круг","Ромб","Осьминог","Треугольник"] , rightAnswer: 3)
 
 let question5 = Question(question: "Кто такая Звёздочка из мультика «Звёздочка Баттерфляй»", allAnswers: ["Принцесса","Злодейка","Звёздная Принцесса","Обычная девочка"] , rightAnswer: 3)
-let question6 = Question(question: "Какого цвета пластмассовая основа симпла дипла?", allAnswers: ["розовый","белый","зелёный","красный"] , rightAnswer: 3)
+let question6 = Question(question: "Какого цвета пластмассовая основа симпла дипла?", allAnswers: ["розовый","белый","зелёный","красный"] , rightAnswer: 2)
 
 let question7 = Question(question: "Какого цвета Доберман?", allAnswers: ["розовый","черный","белый","кремовый"] , rightAnswer: 2)
 let question8 = Question(question: "Шпиц он какой?", allAnswers: ["лысый","с короткой шерстью","пушистый","огромный комок шерсти"] , rightAnswer: 3)
