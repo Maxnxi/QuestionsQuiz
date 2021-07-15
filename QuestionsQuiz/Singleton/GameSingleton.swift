@@ -21,6 +21,14 @@ final class GameSingleton {
         }
     }
     
+    //ДЗ №2 п.1 Strategy
+    //порядок вопросов
+    var questionsOrder: QuestionsOrder = .straight {
+        willSet{
+            print("Gamesingleton questionsOrder setted", newValue)
+        }
+    }
+    
     private init() {
         gameResults = resultsCareTaker.loadResults() ?? []
     }

@@ -11,12 +11,17 @@ import Foundation
 
 class GameSession {
     
-    var questionsArray:[Question]?
+    var questionsArray:[Question] = []
     var question: Question?
     
-    var totalQuestions: Int = 10
+    var totalQuestions: Int {
+        let count = questionsArray.count
+        return count
+    }
     var numberOfQuestion: Int = 0
     var questionsAnswered: Int = 0
+  
+    
     var questionsAnsweredRight: Int?
     
     var totalMoneyEarned: Int?
@@ -28,8 +33,8 @@ class GameSession {
     var helpersUsed: Int?
 //    var questionsOrder:
     
-    init(){
-       
+    init(orderQuestions: CreateOrderOfQuestions){
+        self.questionsArray = orderQuestions.createOrder(questions: QUESTIONS_ARRAY)
     }
     
 }

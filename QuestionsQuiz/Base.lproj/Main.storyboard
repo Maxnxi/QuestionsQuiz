@@ -37,8 +37,7 @@
                                             <color key="titleColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="resultsBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="883-8Y-TBP"/>
-                                            <action selector="settingsBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BcZ-Rt-Vj4"/>
+                                            <action selector="settingsBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qmh-65-yAy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9j-X1-08j">
@@ -49,9 +48,7 @@
                                             <color key="titleColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="addQuestionBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iI0-Ju-8Kx"/>
-                                            <action selector="resultsBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CXm-9Y-TAG"/>
-                                            <action selector="settingsBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TDL-ig-FNM"/>
+                                            <action selector="addQuestionBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SMY-sQ-dsS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2F-67-S5b">
@@ -61,7 +58,7 @@
                                             <color key="titleColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="resultsBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y4P-qy-9YU"/>
+                                            <action selector="resultsBtnWasPrssd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C3I-Uv-cEA"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -75,10 +72,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addQuestionBtn" destination="b9j-X1-08j" id="sgK-Qz-oCR"/>
+                        <outlet property="addQuestionBtn" destination="b9j-X1-08j" id="wE7-wQ-qJf"/>
                         <outlet property="playBtn" destination="DaZ-gZ-BDB" id="YlP-Kj-ebk"/>
-                        <outlet property="resultsBtn" destination="03B-md-Fqd" id="EMk-NV-CUp"/>
-                        <outlet property="settingsBtn" destination="03B-md-Fqd" id="eQD-rE-dSW"/>
+                        <outlet property="resultsBtn" destination="U2F-67-S5b" id="gRI-Ke-ACE"/>
+                        <outlet property="settingsBtn" destination="03B-md-Fqd" id="F9o-da-upk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -304,6 +301,7 @@
                             <constraint firstItem="jEr-4a-CdO" firstAttribute="trailing" secondItem="iVi-gH-eDN" secondAttribute="trailing" constant="16" id="qTl-3v-nFZ"/>
                             <constraint firstItem="fZU-tV-U0e" firstAttribute="leading" secondItem="jEr-4a-CdO" secondAttribute="leading" constant="28" id="qpj-ju-hnx"/>
                             <constraint firstItem="jEr-4a-CdO" firstAttribute="trailing" secondItem="r34-P0-hjS" secondAttribute="trailing" constant="32" id="sWp-FX-cuZ"/>
+                            <constraint firstItem="jEr-4a-CdO" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dcH-ba-9Sz" secondAttribute="trailing" symbolic="YES" id="ulx-5E-IGj"/>
                             <constraint firstItem="ysd-3H-EAF" firstAttribute="top" secondItem="jbs-r2-TGI" secondAttribute="bottom" constant="8" id="uoQ-fa-gRE"/>
                             <constraint firstItem="r34-P0-hjS" firstAttribute="leading" secondItem="jEr-4a-CdO" secondAttribute="leading" constant="32" id="xIr-Vz-BN8"/>
                         </constraints>
