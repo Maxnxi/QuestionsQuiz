@@ -14,13 +14,14 @@
 		0559ADE0269D8C9500D9495F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0559ADDF269D8C9500D9495F /* Assets.xcassets */; };
 		0559ADE3269D8C9500D9495F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0559ADE1269D8C9500D9495F /* LaunchScreen.storyboard */; };
 		0559ADEE269D900B00D9495F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADED269D900B00D9495F /* Question.swift */; };
-		0559ADF1269D91CD00D9495F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADF0269D91CD00D9495F /* Game.swift */; };
+		0559ADF1269D91CD00D9495F /* GameSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADF0269D91CD00D9495F /* GameSingleton.swift */; };
 		0559ADF3269D921C00D9495F /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADF2269D921C00D9495F /* GameSession.swift */; };
 		0559ADF5269D954600D9495F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADF4269D954600D9495F /* GameViewController.swift */; };
 		0559ADF7269D9E7C00D9495F /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADF6269D9E7C00D9495F /* ResultsViewController.swift */; };
 		0559ADF9269D9F1B00D9495F /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADF8269D9F1B00D9495F /* ResultsTableViewCell.swift */; };
 		05663D9F269F0F2B00CEF5CE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05663D9E269F0F2B00CEF5CE /* Result.swift */; };
 		05663DA1269F0FDB00CEF5CE /* CareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05663DA0269F0FDB00CEF5CE /* CareTaker.swift */; };
+		05663DA5269F431400CEF5CE /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05663DA4269F431400CEF5CE /* Strategy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,13 +34,14 @@
 		0559ADE2269D8C9500D9495F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0559ADE4269D8C9500D9495F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0559ADED269D900B00D9495F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		0559ADF0269D91CD00D9495F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		0559ADF0269D91CD00D9495F /* GameSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSingleton.swift; sourceTree = "<group>"; };
 		0559ADF2269D921C00D9495F /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		0559ADF4269D954600D9495F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		0559ADF6269D9E7C00D9495F /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		0559ADF8269D9F1B00D9495F /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
 		05663D9E269F0F2B00CEF5CE /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		05663DA0269F0FDB00CEF5CE /* CareTaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTaker.swift; sourceTree = "<group>"; };
+		05663DA4269F431400CEF5CE /* Strategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strategy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +74,13 @@
 		0559ADD5269D8C9300D9495F /* QuestionsQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				05663DA3269F430600CEF5CE /* Strategy */,
 				05663DA2269F106300CEF5CE /* Memento */,
+				0559ADEA269D8FA400D9495F /* Model */,
 				0559ADEF269D91C100D9495F /* Singleton */,
 				05663D9D269F0F1C00CEF5CE /* Objects */,
 				0559ADEC269D8FB100D9495F /* Controller */,
 				0559ADEB269D8FAC00D9495F /* View */,
-				0559ADEA269D8FA400D9495F /* Model */,
 				0559ADD6269D8C9300D9495F /* AppDelegate.swift */,
 				0559ADD8269D8C9300D9495F /* SceneDelegate.swift */,
 				0559ADDC269D8C9300D9495F /* Main.storyboard */,
@@ -118,7 +121,7 @@
 		0559ADEF269D91C100D9495F /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
-				0559ADF0269D91CD00D9495F /* Game.swift */,
+				0559ADF0269D91CD00D9495F /* GameSingleton.swift */,
 			);
 			path = Singleton;
 			sourceTree = "<group>";
@@ -137,6 +140,14 @@
 				05663DA0269F0FDB00CEF5CE /* CareTaker.swift */,
 			);
 			path = Memento;
+			sourceTree = "<group>";
+		};
+		05663DA3269F430600CEF5CE /* Strategy */ = {
+			isa = PBXGroup;
+			children = (
+				05663DA4269F431400CEF5CE /* Strategy.swift */,
+			);
+			path = Strategy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,10 +224,11 @@
 				0559ADF5269D954600D9495F /* GameViewController.swift in Sources */,
 				0559ADDB269D8C9300D9495F /* MainMenuViewController.swift in Sources */,
 				0559ADF9269D9F1B00D9495F /* ResultsTableViewCell.swift in Sources */,
-				0559ADF1269D91CD00D9495F /* Game.swift in Sources */,
+				0559ADF1269D91CD00D9495F /* GameSingleton.swift in Sources */,
 				0559ADEE269D900B00D9495F /* Question.swift in Sources */,
 				0559ADD7269D8C9300D9495F /* AppDelegate.swift in Sources */,
 				05663D9F269F0F2B00CEF5CE /* Result.swift in Sources */,
+				05663DA5269F431400CEF5CE /* Strategy.swift in Sources */,
 				0559ADF3269D921C00D9495F /* GameSession.swift in Sources */,
 				0559ADD9269D8C9300D9495F /* SceneDelegate.swift in Sources */,
 				0559ADF7269D9E7C00D9495F /* ResultsViewController.swift in Sources */,

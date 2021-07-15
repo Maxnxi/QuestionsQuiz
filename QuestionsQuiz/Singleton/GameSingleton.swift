@@ -10,7 +10,9 @@ import Foundation
 final class GameSingleton {
     
     static let shared = GameSingleton()
+    
     private let resultsCareTaker = CareTaker()
+    
     var gameSession: GameSession?
     
     var gameResults: [Result] {

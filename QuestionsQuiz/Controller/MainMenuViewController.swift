@@ -30,6 +30,7 @@ class MainMenuViewController: UIViewController {
         
         if let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameViewController") as? GameViewController {
             
+            //подписываем делегат
             view.gameViewControllerDelegate = gmeSession
             view.modalPresentationStyle = .automatic
             self.present(view, animated: true, completion: nil)

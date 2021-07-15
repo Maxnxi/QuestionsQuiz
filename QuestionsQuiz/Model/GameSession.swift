@@ -26,6 +26,7 @@ class GameSession {
         "50Hint": 1
     ]
     var helpersUsed: Int?
+//    var questionsOrder:
     
     init(){
        
