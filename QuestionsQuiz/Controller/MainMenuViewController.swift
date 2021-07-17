@@ -95,6 +95,10 @@ class MainMenuViewController: UIViewController {
     }
 
     @IBAction func addQuestionBtnWasPrssd(_ sender: Any) {
+        if let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addQuestionViewController") as? AddQuestionViewController {
+            view.modalPresentationStyle = .fullScreen
+            self.present(view, animated: true, completion: nil)
+        }
     }
 
     @IBAction func resultsBtnWasPrssd(_ sender: Any) {

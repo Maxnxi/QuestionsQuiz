@@ -34,7 +34,7 @@ class GameSession {
 //    var questionsOrder:
     
     init(orderQuestions: CreateOrderOfQuestions){
-        self.questionsArray = orderQuestions.createOrder(questions: QUESTIONS_ARRAY)
+        self.questionsArray = orderQuestions.createOrder(questions: QuestionStorage.shared.questionsArray)
     }
     
 }

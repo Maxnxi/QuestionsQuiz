@@ -11,7 +11,7 @@ final class GameSingleton {
     
     static let shared = GameSingleton()
     
-    private let resultsCareTaker = CareTaker()
+    private let resultsCareTaker = CareTakerResults()
     
     var gameSession: GameSession?
     
