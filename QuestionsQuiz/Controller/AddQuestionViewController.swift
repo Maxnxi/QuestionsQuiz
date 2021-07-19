@@ -46,6 +46,8 @@ class AddQuestionViewController: UIViewController {
             questionsCell -= 1
             deleteQuestionBtn.isHidden = true
         }
+        
+        CellUniqNumber.shared.removeLast()
     }
     
     @IBAction func addQuestionsToBaseBtnWasPrssd(_ sender: Any) {

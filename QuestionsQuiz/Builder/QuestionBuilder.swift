@@ -12,11 +12,11 @@ import Foundation
 //}
 
 class QuestionBuilder {
-    private(set) var questions: [Int:String] = [:]
-    private(set) var rightAnswers: [Int:String] = [:]
-    private(set) var wrongAnswers1: [Int:String] = [:]
-    private(set) var wrongAnswers2: [Int:String] = [:]
-    private(set) var wrongAnswers3: [Int:String] = [:]
+     var questions: [Int:String] = [:]
+     var rightAnswers: [Int:String] = [:]
+     var wrongAnswers1: [Int:String] = [:]
+     var wrongAnswers2: [Int:String] = [:]
+     var wrongAnswers3: [Int:String] = [:]
     
     
     func build() -> [Question] {
@@ -24,6 +24,8 @@ class QuestionBuilder {
         var questionsTmpArray: [Question] = []
         
         let questionsNumberArray = CellUniqNumber.shared.uniqCellNumbersArray()
+        print("questionsNumberArray is - ", questionsNumberArray)
+        print("questions is - ", questions)
         if questionsNumberArray.count == questions.count {
             
             for index in questionsNumberArray {

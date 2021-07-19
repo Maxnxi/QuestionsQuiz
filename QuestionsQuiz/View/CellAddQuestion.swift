@@ -11,6 +11,7 @@ class CellAddQuestion: UITableViewCell {
 
     @IBOutlet weak var questionTxtView: UITextView! {
         didSet {
+            print("didSet questions - done")
             question = questionTxtView.text
         }
     }
@@ -39,9 +40,15 @@ class CellAddQuestion: UITableViewCell {
         }
     }
     
-    weak var builder: QuestionBuilder?
+    var builder: QuestionBuilder?
     
     private var randomNumOfCell: Int = 0
+    
+    var question2: String {
+        //var qst = ""
+        return questionTxtView.text
+        //return qst
+    }
     
     private var question: String? {
         didSet {
@@ -87,33 +94,35 @@ class CellAddQuestion: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        cellNum()
     
+        
     }
     
     init(){
         super.init(style: .default, reuseIdentifier: "cellAddQuestion")
-        cellNum()
+        //cellNum()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        cellNum()
+        //cellNum()
     }
     
     func cellNum(){
-        
+        print(#function)
         var randomTmpCellNumber: Int = 0
         
         repeat {
             randomTmpCellNumber = Int.random(in: 0...50)
         } while (CellUniqNumber.shared.checkIsNumberUniq(number: randomTmpCellNumber) == false)
+        print("randomTmpCellNumber is -", randomTmpCellNumber)
         CellUniqNumber.shared.addUniqNumber(number: randomTmpCellNumber)
         self.randomNumOfCell = randomTmpCellNumber
             
     }
     
-   
+    
     
 
 }

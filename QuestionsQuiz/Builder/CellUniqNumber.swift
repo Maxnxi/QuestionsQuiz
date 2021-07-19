@@ -39,4 +39,8 @@ class CellUniqNumber {
         
     }
     
+    func removeLast() {
+        uniqCellNumbers.removeLast()
+    }
+    
 }
