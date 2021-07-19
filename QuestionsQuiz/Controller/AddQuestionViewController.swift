@@ -21,19 +21,18 @@ class AddQuestionViewController: UIViewController {
     var questionsArray: [Question] = []
     var cellsArray: [UITableViewCell] = []
     
+    var questionBuilder: QuestionBuilder?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         self.deleteQuestionBtn.isHidden = true
-        // Do any additional setup after loading the view.
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(onDidRecievedData(_:)), name: <#T##NSNotification.Name?#>, object: <#T##Any?#>)
+        self.questionBuilder = QuestionBuilder()
+        
+        
     }
-    
-//    @objc func onDidRecievedData(_ notification: Notification) {
-//        if let data = notification.userInfo
-//    }
     
     @IBAction func addOneMoreQuestionCellBtnWasPrssd(_ sender: Any) {
         questionsCell += 1
@@ -50,18 +49,31 @@ class AddQuestionViewController: UIViewController {
     }
     
     @IBAction func addQuestionsToBaseBtnWasPrssd(_ sender: Any) {
-        let numberOfRows = tableView(tableView, numberOfRowsInSection: 0)
-        if numberOfRows == questionsCell {
-            print("numberOfRows == questionsCell")
+//        let numberOfRows = tableView(tableView, numberOfRowsInSection: 0)
+//        if numberOfRows == questionsCell {
+//            print("numberOfRows == questionsCell")
+//        }
+//        print("cells Array count - is - ", cellsArray.count)
+
+        guard let newQuestions = questionBuilder?.build() else {
+            print("Error while creating newQuestions in AddQuestionViewController")
+            return
         }
-        print("cells Array count - is - ", cellsArray.count)
         
         
+        QuestionStorage.shared.addQuestionToArray(questions: newQuestions)
+        print("Added questions", newQuestions.count)
         
-        QuestionStorage.shared.addQuestionToArray(questions: self.questionsArray)
-        print("Added questions")
+        //очистили
+        CellUniqNumber.shared.clearArrayOfUniqNumbers()
+        self.questionBuilder = nil
+        
         dismiss(animated: true, completion: nil)
         //TO do alert view
+        
+        
+        
+        
     }
     
     @IBAction func backBtnWasPrssd(_ sender: Any) {
@@ -76,7 +88,7 @@ extension AddQuestionViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cellAddQuestion") as? CellAddQuestion {
-            
+            cell.builder = questionBuilder
             
             return cell
         }
