@@ -8,5 +8,7 @@ target 'QuestionsQuiz' do
   # Pods for QuestionsQuiz
 
 pod 'RxSwift'
+pod 'RxCocoa'
+pod 'RxDataSources'
 
 end

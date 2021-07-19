@@ -6,18 +6,25 @@
 //
 
 import Foundation
+import RxSwift
 
 //class QuestionBuilder {
 //    private(set) var questionTxt:
 //}
 
 class QuestionBuilder {
+    
+    
+    
      var questions: [Int:String] = [:]
      var rightAnswers: [Int:String] = [:]
      var wrongAnswers1: [Int:String] = [:]
      var wrongAnswers2: [Int:String] = [:]
      var wrongAnswers3: [Int:String] = [:]
     
+    init() {
+      
+    }
     
     func build() -> [Question] {
         
