@@ -10,12 +10,22 @@ import Foundation
 final class GameSingleton {
     
     static let shared = GameSingleton()
-    private let resultsCareTaker = CareTaker()
+    
+    private let resultsCareTaker = CareTakerResults()
+    
     var gameSession: GameSession?
     
     var gameResults: [Result] {
         didSet {
             resultsCareTaker.saveResults(results: gameResults)
+        }
+    }
+    
+    //ДЗ №2 п.1 Strategy
+    //порядок вопросов
+    var questionsOrder: QuestionsOrder = .straight {
+        willSet{
+            print("Gamesingleton questionsOrder setted", newValue)
         }
     }
     

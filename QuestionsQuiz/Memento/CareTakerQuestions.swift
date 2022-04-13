@@ -1,34 +1,34 @@
 //
-//  CareTaker.swift
+//  CareTakerQuestions.swift
 //  QuestionsQuiz
 //
-//  Created by Maksim on 14.07.2021.
+//  Created by Maksim on 17.07.2021.
 //
 
 import Foundation
 
-class CareTaker {
+class CareTakerQuestions {
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     
     private let key = "key"
     
-    func saveResults(results: [Result]) {
+    func saveQuestions(questions: [Question]) {
         do {
-            let data = try encoder.encode(results)
+            let data = try encoder.encode(questions)
             UserDefaults.standard.setValue(data, forKey: key)
         } catch {
             print(error.localizedDescription)
         }
     }
     
-    func loadResults() -> [Result]? {
+    func loadQuestions() -> [Question]? {
         guard let data = UserDefaults.standard.data(forKey: key) else {
             return nil
         }
         
         do {
-            return try decoder.decode([Result].self, from: data)
+            return try decoder.decode([Question].self, from: data)
         } catch {
             print(error.localizedDescription)
             return nil

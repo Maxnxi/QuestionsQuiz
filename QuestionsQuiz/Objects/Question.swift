@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Question {
+struct Question: Codable {
     
     var question: String
     var allAnswers: [String]
@@ -38,3 +38,39 @@ let question9 = Question(question: "Что означает слово clover?",
 let question10 = Question(question: "Сколько пупырок в среднем сипле дипле?", allAnswers: ["1","4","2","3"] , rightAnswer: 2)
 
 let QUESTIONS_ARRAY = [question1,question2,question3,question4,question5,question6,question7,question8,question9,question10]
+
+
+class QuestionStorage {
+    static let shared = QuestionStorage()
+    
+    private var questionsArrayFromBegin: [Question] = []
+    //ДЗ№2 п.4
+    private let questionsCareTaker = CareTakerQuestions()
+    var questionsArray:[Question] {
+        didSet {
+            questionsCareTaker.saveQuestions(questions: questionsArray)
+        }
+    }
+    
+    private init() {
+        self.questionsArrayFromBegin = QUESTIONS_ARRAY
+        self.questionsArray = questionsCareTaker.loadQuestions() ?? []
+        if questionsArray.count == 0 {
+            questionsArrayFromBegin.forEach { questionBase in
+                questionsArray.append(questionBase)
+            }
+        }
+    }
+    
+    func addQuestionToArray(questions:[Question]){
+        questions.forEach { question in
+            questionsArray.append(question)
+        }
+    }
+    
+    func clearQuestions(){
+        questionsArray.removeAll()
+    }
+    
+    
+}

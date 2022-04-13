@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0544910B26A307E000524944 /* CellAddQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544910A26A307E000524944 /* CellAddQuestion.swift */; };
+		0544910D26A30D7100524944 /* CareTakerQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544910C26A30D7100524944 /* CareTakerQuestions.swift */; };
+		0544911026A3275A00524944 /* QuestionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544910F26A3275A00524944 /* QuestionBuilder.swift */; };
+		0544911226A55AC500524944 /* CellUniqNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544911126A55AC500524944 /* CellUniqNumber.swift */; };
 		0559ADD7269D8C9300D9495F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADD6269D8C9300D9495F /* AppDelegate.swift */; };
 		0559ADD9269D8C9300D9495F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADD8269D8C9300D9495F /* SceneDelegate.swift */; };
 		0559ADDB269D8C9300D9495F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADDA269D8C9300D9495F /* MainMenuViewController.swift */; };
@@ -14,16 +18,28 @@
 		0559ADE0269D8C9500D9495F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0559ADDF269D8C9500D9495F /* Assets.xcassets */; };
 		0559ADE3269D8C9500D9495F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0559ADE1269D8C9500D9495F /* LaunchScreen.storyboard */; };
 		0559ADEE269D900B00D9495F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADED269D900B00D9495F /* Question.swift */; };
-		0559ADF1269D91CD00D9495F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADF0269D91CD00D9495F /* Game.swift */; };
+		0559ADF1269D91CD00D9495F /* GameSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADF0269D91CD00D9495F /* GameSingleton.swift */; };
 		0559ADF3269D921C00D9495F /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADF2269D921C00D9495F /* GameSession.swift */; };
 		0559ADF5269D954600D9495F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADF4269D954600D9495F /* GameViewController.swift */; };
 		0559ADF7269D9E7C00D9495F /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADF6269D9E7C00D9495F /* ResultsViewController.swift */; };
 		0559ADF9269D9F1B00D9495F /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0559ADF8269D9F1B00D9495F /* ResultsTableViewCell.swift */; };
 		05663D9F269F0F2B00CEF5CE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05663D9E269F0F2B00CEF5CE /* Result.swift */; };
-		05663DA1269F0FDB00CEF5CE /* CareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05663DA0269F0FDB00CEF5CE /* CareTaker.swift */; };
+		05663DA1269F0FDB00CEF5CE /* CareTakerResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05663DA0269F0FDB00CEF5CE /* CareTakerResults.swift */; };
+		05663DA5269F431400CEF5CE /* CreateOrderOfQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05663DA4269F431400CEF5CE /* CreateOrderOfQuestions.swift */; };
+		05663DA726A0253F00CEF5CE /* RandomOrderQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05663DA626A0253F00CEF5CE /* RandomOrderQuestions.swift */; };
+		05663DA926A0262B00CEF5CE /* StraightOrderQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05663DA826A0262B00CEF5CE /* StraightOrderQuestions.swift */; };
+		05663DAB26A027ED00CEF5CE /* QuestionsOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05663DAA26A027ED00CEF5CE /* QuestionsOrder.swift */; };
+		05663DAD26A03F2A00CEF5CE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05663DAC26A03F2A00CEF5CE /* SettingsViewController.swift */; };
+		05E2D7B326A0D4F300F855DC /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2D7B226A0D4F300F855DC /* Observable.swift */; };
+		05F92C3F26A1CDDF0045FB0A /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F92C3E26A1CDDF0045FB0A /* AddQuestionViewController.swift */; };
+		0FC563D88F3EC17A173B789E /* Pods_QuestionsQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 718344BA6F12081298B73C6B /* Pods_QuestionsQuiz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0544910A26A307E000524944 /* CellAddQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAddQuestion.swift; sourceTree = "<group>"; };
+		0544910C26A30D7100524944 /* CareTakerQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTakerQuestions.swift; sourceTree = "<group>"; };
+		0544910F26A3275A00524944 /* QuestionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBuilder.swift; sourceTree = "<group>"; };
+		0544911126A55AC500524944 /* CellUniqNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellUniqNumber.swift; sourceTree = "<group>"; };
 		0559ADD3269D8C9300D9495F /* QuestionsQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestionsQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0559ADD6269D8C9300D9495F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0559ADD8269D8C9300D9495F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,13 +49,23 @@
 		0559ADE2269D8C9500D9495F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0559ADE4269D8C9500D9495F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0559ADED269D900B00D9495F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		0559ADF0269D91CD00D9495F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		0559ADF0269D91CD00D9495F /* GameSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSingleton.swift; sourceTree = "<group>"; };
 		0559ADF2269D921C00D9495F /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		0559ADF4269D954600D9495F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		0559ADF6269D9E7C00D9495F /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		0559ADF8269D9F1B00D9495F /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
 		05663D9E269F0F2B00CEF5CE /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		05663DA0269F0FDB00CEF5CE /* CareTaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTaker.swift; sourceTree = "<group>"; };
+		05663DA0269F0FDB00CEF5CE /* CareTakerResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTakerResults.swift; sourceTree = "<group>"; };
+		05663DA4269F431400CEF5CE /* CreateOrderOfQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderOfQuestions.swift; sourceTree = "<group>"; };
+		05663DA626A0253F00CEF5CE /* RandomOrderQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomOrderQuestions.swift; sourceTree = "<group>"; };
+		05663DA826A0262B00CEF5CE /* StraightOrderQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StraightOrderQuestions.swift; sourceTree = "<group>"; };
+		05663DAA26A027ED00CEF5CE /* QuestionsOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsOrder.swift; sourceTree = "<group>"; };
+		05663DAC26A03F2A00CEF5CE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		05E2D7B226A0D4F300F855DC /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		05F92C3E26A1CDDF0045FB0A /* AddQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
+		71678FFF18041AAFDE585536 /* Pods-QuestionsQuiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuestionsQuiz.debug.xcconfig"; path = "Target Support Files/Pods-QuestionsQuiz/Pods-QuestionsQuiz.debug.xcconfig"; sourceTree = "<group>"; };
+		718344BA6F12081298B73C6B /* Pods_QuestionsQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuestionsQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D587AC52155B279C196CE255 /* Pods-QuestionsQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuestionsQuiz.release.xcconfig"; path = "Target Support Files/Pods-QuestionsQuiz/Pods-QuestionsQuiz.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +73,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FC563D88F3EC17A173B789E /* Pods_QuestionsQuiz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0544910E26A3274100524944 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				0544910F26A3275A00524944 /* QuestionBuilder.swift */,
+				0544911126A55AC500524944 /* CellUniqNumber.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
 		0559ADCA269D8C9300D9495F = {
 			isa = PBXGroup;
 			children = (
 				0559ADD5269D8C9300D9495F /* QuestionsQuiz */,
 				0559ADD4269D8C9300D9495F /* Products */,
+				8FC70F99A32E58E3B3FCCF82 /* Pods */,
+				8F63418B115F2A335473A30E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,12 +110,15 @@
 		0559ADD5269D8C9300D9495F /* QuestionsQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				0544910E26A3274100524944 /* Builder */,
+				05E2D7B126A0D4D500F855DC /* Observable */,
+				05663DA3269F430600CEF5CE /* Strategy */,
 				05663DA2269F106300CEF5CE /* Memento */,
+				0559ADEA269D8FA400D9495F /* Model */,
 				0559ADEF269D91C100D9495F /* Singleton */,
 				05663D9D269F0F1C00CEF5CE /* Objects */,
 				0559ADEC269D8FB100D9495F /* Controller */,
 				0559ADEB269D8FAC00D9495F /* View */,
-				0559ADEA269D8FA400D9495F /* Model */,
 				0559ADD6269D8C9300D9495F /* AppDelegate.swift */,
 				0559ADD8269D8C9300D9495F /* SceneDelegate.swift */,
 				0559ADDC269D8C9300D9495F /* Main.storyboard */,
@@ -91,7 +132,6 @@
 		0559ADEA269D8FA400D9495F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0559ADED269D900B00D9495F /* Question.swift */,
 				0559ADF2269D921C00D9495F /* GameSession.swift */,
 			);
 			path = Model;
@@ -101,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				0559ADF8269D9F1B00D9495F /* ResultsTableViewCell.swift */,
+				0544910A26A307E000524944 /* CellAddQuestion.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -110,7 +151,9 @@
 			children = (
 				0559ADDA269D8C9300D9495F /* MainMenuViewController.swift */,
 				0559ADF4269D954600D9495F /* GameViewController.swift */,
+				05663DAC26A03F2A00CEF5CE /* SettingsViewController.swift */,
 				0559ADF6269D9E7C00D9495F /* ResultsViewController.swift */,
+				05F92C3E26A1CDDF0045FB0A /* AddQuestionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -118,7 +161,7 @@
 		0559ADEF269D91C100D9495F /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
-				0559ADF0269D91CD00D9495F /* Game.swift */,
+				0559ADF0269D91CD00D9495F /* GameSingleton.swift */,
 			);
 			path = Singleton;
 			sourceTree = "<group>";
@@ -127,6 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				05663D9E269F0F2B00CEF5CE /* Result.swift */,
+				0559ADED269D900B00D9495F /* Question.swift */,
+				05663DAA26A027ED00CEF5CE /* QuestionsOrder.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -134,9 +179,46 @@
 		05663DA2269F106300CEF5CE /* Memento */ = {
 			isa = PBXGroup;
 			children = (
-				05663DA0269F0FDB00CEF5CE /* CareTaker.swift */,
+				05663DA0269F0FDB00CEF5CE /* CareTakerResults.swift */,
+				0544910C26A30D7100524944 /* CareTakerQuestions.swift */,
 			);
 			path = Memento;
+			sourceTree = "<group>";
+		};
+		05663DA3269F430600CEF5CE /* Strategy */ = {
+			isa = PBXGroup;
+			children = (
+				05663DA4269F431400CEF5CE /* CreateOrderOfQuestions.swift */,
+				05663DA626A0253F00CEF5CE /* RandomOrderQuestions.swift */,
+				05663DA826A0262B00CEF5CE /* StraightOrderQuestions.swift */,
+			);
+			path = Strategy;
+			sourceTree = "<group>";
+		};
+		05E2D7B126A0D4D500F855DC /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				05E2D7B226A0D4F300F855DC /* Observable.swift */,
+			);
+			path = Observable;
+			sourceTree = "<group>";
+		};
+		8F63418B115F2A335473A30E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				718344BA6F12081298B73C6B /* Pods_QuestionsQuiz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8FC70F99A32E58E3B3FCCF82 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				71678FFF18041AAFDE585536 /* Pods-QuestionsQuiz.debug.xcconfig */,
+				D587AC52155B279C196CE255 /* Pods-QuestionsQuiz.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0559ADE7269D8C9500D9495F /* Build configuration list for PBXNativeTarget "QuestionsQuiz" */;
 			buildPhases = (
+				B6BCFA4E72B437B379293FB3 /* [CP] Check Pods Manifest.lock */,
 				0559ADCF269D8C9300D9495F /* Sources */,
 				0559ADD0269D8C9300D9495F /* Frameworks */,
 				0559ADD1269D8C9300D9495F /* Resources */,
+				0740D885ACCDCC01F4CEABDE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,21 +288,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0740D885ACCDCC01F4CEABDE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuestionsQuiz/Pods-QuestionsQuiz-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuestionsQuiz/Pods-QuestionsQuiz-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuestionsQuiz/Pods-QuestionsQuiz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6BCFA4E72B437B379293FB3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuestionsQuiz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0559ADCF269D8C9300D9495F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05663DA1269F0FDB00CEF5CE /* CareTaker.swift in Sources */,
+				05663DA1269F0FDB00CEF5CE /* CareTakerResults.swift in Sources */,
 				0559ADF5269D954600D9495F /* GameViewController.swift in Sources */,
+				05F92C3F26A1CDDF0045FB0A /* AddQuestionViewController.swift in Sources */,
 				0559ADDB269D8C9300D9495F /* MainMenuViewController.swift in Sources */,
 				0559ADF9269D9F1B00D9495F /* ResultsTableViewCell.swift in Sources */,
-				0559ADF1269D91CD00D9495F /* Game.swift in Sources */,
+				0559ADF1269D91CD00D9495F /* GameSingleton.swift in Sources */,
 				0559ADEE269D900B00D9495F /* Question.swift in Sources */,
+				0544911226A55AC500524944 /* CellUniqNumber.swift in Sources */,
 				0559ADD7269D8C9300D9495F /* AppDelegate.swift in Sources */,
+				05663DAD26A03F2A00CEF5CE /* SettingsViewController.swift in Sources */,
+				0544911026A3275A00524944 /* QuestionBuilder.swift in Sources */,
+				05663DA726A0253F00CEF5CE /* RandomOrderQuestions.swift in Sources */,
 				05663D9F269F0F2B00CEF5CE /* Result.swift in Sources */,
+				05663DA5269F431400CEF5CE /* CreateOrderOfQuestions.swift in Sources */,
+				0544910D26A30D7100524944 /* CareTakerQuestions.swift in Sources */,
 				0559ADF3269D921C00D9495F /* GameSession.swift in Sources */,
+				05E2D7B326A0D4F300F855DC /* Observable.swift in Sources */,
 				0559ADD9269D8C9300D9495F /* SceneDelegate.swift in Sources */,
+				0544910B26A307E000524944 /* CellAddQuestion.swift in Sources */,
+				05663DAB26A027ED00CEF5CE /* QuestionsOrder.swift in Sources */,
+				05663DA926A0262B00CEF5CE /* StraightOrderQuestions.swift in Sources */,
 				0559ADF7269D9E7C00D9495F /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +500,7 @@
 		};
 		0559ADE8269D8C9500D9495F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71678FFF18041AAFDE585536 /* Pods-QuestionsQuiz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -376,12 +514,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.maksimPonomarev.QuestionsQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		0559ADE9269D8C9500D9495F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D587AC52155B279C196CE255 /* Pods-QuestionsQuiz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -395,7 +534,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.maksimPonomarev.QuestionsQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

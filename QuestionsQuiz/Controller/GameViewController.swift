@@ -46,7 +46,11 @@ class GameViewController: UIViewController {
     var totalQuestions: Int = 10
     var numberOfQuestion: Int = 0
     var answeredWellQuestions: Int = 0
-    var questionsAnswered: Int = 0
+    //var questionsAnswered: Int = 0
+    //ДЗ№2 п.3
+    var questionsAnswered = Observable<Int>(0)
+    //for Observable
+    var qstTmp: Int = 0
     
     var moneyEarned: Int = 0
     var helpers: [String: Int] = [
@@ -56,13 +60,21 @@ class GameViewController: UIViewController {
     ]
     var helpersUsed: Int = 0
     
+    //for Observable
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        questionsAnswered.addObserver(self, options: [.new, .initial], closure: { [weak self] qstAnswered, _ in
+            self?.qstTmp = qstAnswered
+        })
         
         
-        self.questionsArray = QUESTIONS_ARRAY
+        //ДЗ№2 Strategy
+        self.questionsArray = GameSingleton.shared.gameSession?.questionsArray
         print("questions loaded")
         setQuestion(numberOfQuestion: numberOfQuestion)
+        
+        
     }
     
     func setQuestion(numberOfQuestion: Int) {
@@ -70,8 +82,9 @@ class GameViewController: UIViewController {
               let count = questionsArray?.count else { return }
         
         self.question = quest
+       
         
-        self.numberOfQuestionsLbl.text = "Вопрос: \(numberOfQuestion + 1 ) из \(count)"
+        self.numberOfQuestionsLbl.text = "Вопрос: \(qstTmp + 1 ) из \(count)"
         
         //to do
         self.answeredWellQuestionsLbl.text = "Отвечено верно: 0 %"
@@ -112,7 +125,7 @@ class GameViewController: UIViewController {
     
     
     func answerTapped(numberOfAnswer: Int) {
-        questionsAnswered += 1
+        qstTmp += 1
         guard let questi = question else {
             print("error #10")
             return
@@ -134,7 +147,7 @@ class GameViewController: UIViewController {
             }
         }
         
-        gameViewControllerDelegate?.sendResult(questionsAnswered: questionsAnswered, answeredWellQuestions: answeredWellQuestions, moneyEarned: moneyEarned, helpers: helpers, helpersUsed: helpersUsed)
+        gameViewControllerDelegate?.sendResult(questionsAnswered: qstTmp, answeredWellQuestions: answeredWellQuestions, moneyEarned: moneyEarned, helpers: helpers, helpersUsed: helpersUsed)
         
     }
     
@@ -264,7 +277,7 @@ class GameViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-      let result = Result(date: Date(), answers: questionsAnswered, answeredRight: answeredWellQuestions, helpersUsed: helpersUsed, moneyEarned: moneyEarned)
+      let result = Result(date: Date(), answers: qstTmp, answeredRight: answeredWellQuestions, helpersUsed: helpersUsed, moneyEarned: moneyEarned)
         GameSingleton.shared.addResultToArray(result: result)
         GameSingleton.shared.mathsHowManyPercentsOfRightAnswers()
         GameSingleton.shared.endGameCleanGameSession()
